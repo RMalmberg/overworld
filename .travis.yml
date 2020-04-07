@@ -22,6 +22,7 @@ matrix:
         - "8.10"
       before_script:
         - cd frontend/
+        - npm update
         - npm install
         - npm install -g codecov
       script:
