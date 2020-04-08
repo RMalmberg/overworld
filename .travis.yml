@@ -22,5 +22,6 @@ matrix:
         - "8.10"
       before_script:
         - cd frontend/
+        - npm install -g codecov
       script:
         - npm test -- --coverage && codecov
