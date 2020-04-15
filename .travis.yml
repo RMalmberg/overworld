@@ -20,10 +20,10 @@ matrix:
         - codecov
     - language: node_js
       node_js:
-        - "12.16.1"
+        - "8.10"
       before_script:
         - cd frontend/
         - npm install
-        - npm install -g codecov
-      script:
-        - npm test -- --coverage && codecov
+        - npm install -g codecovnpm
+          script:
+            - npm test -- --coverage && codecov
