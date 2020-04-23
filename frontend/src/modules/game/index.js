@@ -138,8 +138,8 @@ export default class Game extends React.Component {
                           <section className="summary">
                             <ShowMoreText
                               lines={5}
-                              more="more."
-                              less="Less."
+                              more="Show more."
+                              less="Show less."
                               anchorClass="show"
                               children={game.summary}
                             />
