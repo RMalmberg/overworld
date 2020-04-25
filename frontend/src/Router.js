@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Game from "./modules/game/";
 import { Navbar } from "./modules/app/components/";
-import SignUpPage from "./modules/app/components/register/"
+import SignUpPage from "./modules/app/components/register"
 import App from "./modules/app/";
 import Profile from "./modules/profile/";
 import Settings from "./modules/settings/";
