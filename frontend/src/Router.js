@@ -27,7 +27,7 @@ class AppRouter extends React.Component {
           <Switch>
             <Route path="/" exact component={App} />
             <Route path="/games/:slug" component={Game} />
-            <Route path="/games/:slug" component={Games} />
+            <Route path="/games" component={Games} />
             <Route path="/user/:username" component={Profile} />
             <Route path="/settings" component={Settings} />
             <Route component={notFound} />
