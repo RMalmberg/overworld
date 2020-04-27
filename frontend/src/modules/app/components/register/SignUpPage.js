@@ -27,7 +27,6 @@ dispatch(getBackdrop(game.gameId));
 */
 return (
     <>
-    // testing just regular text through react
     <h1> Hello, this a test to make sure I am doing stuff right! </h1>
       {Object.keys(backdrop).length > 0 && (
         <Backdrop imageId={backdrop.imageId} />
