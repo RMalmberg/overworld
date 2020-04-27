@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { Backdrop, Footer } from "../";
 import { getBackdrop } from "../../../landing/actions";
 import { Backdrops as options } from "../../../landing/utils";
+import "./styles.css";
+import { Container, Form, Button } from "semantic-ui-react";
+import { RegistrationForm } from "./Form";
 
 const SignUpPage = () => {
 
@@ -27,7 +30,38 @@ dispatch(getBackdrop(game.gameId));
 */
 return (
     <>
-    <h1> Hello, this a test to make sure I am doing stuff right! </h1>
+    <h1> Join Overworld! </h1>
+    <Container>
+     <Form.Field>
+      <label>Email address</label>
+      <input type="email" name="email"/>
+    </Form.Field>
+    <Form.Field>
+      <label>Username</label>
+      <input name="username"/>
+    </Form.Field>
+    <Form.Field>
+      <label>Password (at least 8 characters)</label>
+      <input
+        type="password"
+        name="password"
+      />
+    </Form.Field>
+    <Form.Field>
+      <label>Confirm password</label>
+      <input
+        type="password"
+        name="password2"
+      />
+    </Form.Field>
+    <Button
+      floated="right"
+      positive
+      fluid
+      type="submit">
+      Sign Up
+    </Button>
+  </Container>
       {Object.keys(backdrop).length > 0 && (
         <Backdrop imageId={backdrop.imageId} />
       )}

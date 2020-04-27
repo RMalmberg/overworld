@@ -37,3 +37,12 @@
 .ui.error.message:not(:last-child) {
   margin-bottom: 0.7rem;
 }
+
+h1 {
+text-align: center;
+}
+
+h3 {
+text-align: center;
+color: white;
+}
