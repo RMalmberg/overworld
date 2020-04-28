@@ -56,7 +56,7 @@ class Actions extends React.Component {
           {!this.state.isHovering &&
           <div
           onMouseEnter={this.handleMouseHover}>
-            Share on socials
+            Share this game on social media!
           </div>
           }
           {this.state.isHovering &&
