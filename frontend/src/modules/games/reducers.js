@@ -2,7 +2,7 @@ import { GET_POPULAR_GAMES, GET_BACKDROP } from "./actionTypes";
 
 const initialState = {
   backdrop: {},
-  popular: [],
+  popularGames: [],
   gameData: [],
   isLoadingPopular: true
 };

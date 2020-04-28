@@ -63,7 +63,7 @@ Landing.propTypes = {
   getBackdrop: PropTypes.func.isRequired,
   getPopular: PropTypes.func.isRequired,
   backdrop: PropTypes.object.isRequired,
-  popular: PropTypes.array.isRequired
+  popularGames: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
