@@ -2,11 +2,11 @@ h1 {
   color: #fff;
 }
 
-.landing {
+.games {
   text-shadow: 0 0 7px rgba(0, 0, 0, 0.45);
 }
 
-.landing a {
+.games a {
   border-bottom: 1px solid #456;
 }
 
@@ -21,22 +21,22 @@ h1 {
   color: #9ab !important;
 }
 
-.landing-header .item {
+.games-header .item {
   cursor: pointer;
 }
 
-.landing-header {
+.games-header {
   text-align: center;
 }
 
-.landing-header a {
+.games-header a {
   color: #def;
 }
 
-.landing-header a:hover {
+.games-header a:hover {
   color: #fff !important;
 }
 
-.landing-header .button {
+.games-header .button {
   text-shadow: 0 0 7px rgba(0, 0, 0, 0.45) !important;
 }

@@ -1,4 +1,4 @@
-import { GET_POPULAR, GET_BACKDROP } from "./actionTypes";
+import { GET_POPULAR_GAMES, GET_BACKDROP } from "./actionTypes";
 
 const initialState = {
   backdrop: {},
@@ -9,7 +9,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case GET_POPULAR:
+    case GET_POPULAR_GAMES:
       return {
         ...state,
         popular: action.payload,

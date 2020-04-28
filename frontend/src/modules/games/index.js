@@ -31,10 +31,7 @@ export class Landing extends React.Component {
                 <Register />
                 Or <LogIn loginText="sign in" /> .
               </p>
-          {Object.keys(backdrop).length > 0 && (
-            <Backdrop imageId={backdrop.imageId} />
-          )}
-          <div className="landing">
+          <div className="games">
             <section className="landing-header">
               <h1>Games</h1>
             </section>
