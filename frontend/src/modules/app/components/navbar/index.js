@@ -56,7 +56,7 @@ const Navbar = ({ history }) => {
         <Menu.Item
           name="Login"
           active={activeItem === "Login"}
-          color={"pink"}
+          color={"red"}
           onClick={handleItemClick}
         />
         {isAuthenticated ? (
@@ -98,7 +98,7 @@ const Navbar = ({ history }) => {
             </Dropdown.Menu>
           </Dropdown>
         ) : (
-          <LogIn loginText={"Sign In"} />
+          <p></p>
         )}
         <Menu.Item fitted={"vertically"}>
           <GameSearch onResultSelect={handleResultSelect} />
