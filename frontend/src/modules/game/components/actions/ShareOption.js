@@ -1,8 +1,11 @@
 import React from "react";
-import TwitterShareButton from "react-share";
-import { Grid, Icon, Popup, Form } from "semantic-ui-react";
+import { Grid, Icon, Popup } from "semantic-ui-react";
+import moment from "moment";
+import {TwitterShareButton} from "react-share";
 import "font-awesome/css/font-awesome.min.css";
+
 class ShareOption extends React.Component {
+
     render() {
         return(
             <React.Fragment>

@@ -6,6 +6,7 @@ import { LogIn } from "../../../app/components";
 import LogModal from "../log-modal";
 import Buttons from "./Buttons";
 import Ratings from "./Rating";
+import ShareOption from "./ShareOption";
 import "./styles.css";
 
 class Actions extends React.Component {
@@ -14,6 +15,14 @@ class Actions extends React.Component {
       this.setState({ [name]: value });
     }
   };
+
+  constructor(props) {
+    super(props);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.state = {
+      isHovering: false,
+    };
+  }
 
   render() {
     return (
