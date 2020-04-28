@@ -14,14 +14,10 @@ export class Landing extends React.Component {
     if (Object.keys(this.props.backdrop).length === 0) {
       this.props.getBackdrop(game.gameId);
     }
-
-    if (this.props.popular.length === 0) {
-      this.props.getPopular();
-    }
   }
 
   render() {
-    const { isLoadingPopular, popular, backdrop } = this.props;
+    const { isLoadingPopular, backdrop } = this.props;
     return (
       <React.Fragment>
         <Container className="padding-bottom">
@@ -30,28 +26,8 @@ export class Landing extends React.Component {
           )}
           <div className="landing">
             <section className="landing-header">
-              <h1>The social network for video game lovers.</h1>
-              <p>
-                Start your gaming journal now, it's free!
-                <Register />
-                Or <LogIn loginText="sign in" /> if you're already a member.
-              </p>
+              <LogIn loginText="sign in" />
             </section>
-            <Popular isLoading={isLoadingPopular} popular={popular} />
-            <Features />
-            {Object.keys(backdrop).length > 0 && (
-              <section className="backdrop-name">
-                Backdrop from{" "}
-                <Link
-                  to={{
-                    pathname: `/games/${backdrop.slug}`,
-                    state: backdrop.gameId
-                  }}
-                >
-                  {backdrop.name}
-                </Link>
-              </section>
-            )}
           </div>
         </Container>
         <Footer />
@@ -61,17 +37,11 @@ export class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  isLoadingPopular: PropTypes.bool.isRequired,
-  getBackdrop: PropTypes.func.isRequired,
-  getPopular: PropTypes.func.isRequired,
-  backdrop: PropTypes.object.isRequired,
-  popular: PropTypes.array.isRequired
+  backdrop: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  backdrop: state.landing.backdrop,
-  isLoadingPopular: state.landing.isLoadingPopular,
-  popular: state.landing.popular
+  backdrop: state.landing.backdrop
 });
 
 export default connect(mapStateToProps, { getPopular, getBackdrop })(Landing);
