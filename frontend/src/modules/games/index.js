@@ -32,18 +32,12 @@ export class Games extends React.Component {
                 Or <LogIn loginText="sign in" /> .
               </p>
           <div className="games">
-            <section className="landing-header">
+            <section className="games-header">
               <h1>Games</h1>
             </section>
             <Popular_Games isLoading={isLoadingPopular} popular={popular} />
-            <Features />
-            {Object.keys(backdrop).length > 0 && (
-              <section className="backdrop-name">
-              </section>
-            )}
           </div>
         </Container>
-        <Footer />
       </React.Fragment>
     );
   }
