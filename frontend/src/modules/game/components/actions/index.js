@@ -24,6 +24,16 @@ class Actions extends React.Component {
     };
   }
 
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
+  }
+
   render() {
     return (
       <Menu floated="right" icon="labeled" className="actions" vertical fluid>
@@ -42,7 +52,20 @@ class Actions extends React.Component {
         ) : (
           <LogIn loginText="Sign in to log, rate or review..." />
         )}
-        <Menu.Item content="Share..." link />
+        <Menu.Item>
+          {!this.state.isHovering &&
+          <div
+          onMouseEnter={this.handleMouseHover}>
+            Share on socials
+          </div>
+          }
+          {this.state.isHovering &&
+          <div
+          onMouseLeave={this.handleMouseHover}>
+            <ShareOption game={this.props.game}/>
+          </div>
+        }
+        </Menu.Item>
       </Menu>
     );
   }
