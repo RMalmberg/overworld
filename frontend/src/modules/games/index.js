@@ -4,7 +4,7 @@ import { Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Backdrop, Footer, Register, LogIn } from "../app/components/";
-import { getPopular, getBackdrop } from "./actions";
+import { getPopularGames, getBackdrop } from "./actions";
 import { Features } from "./components/";
 import { Popular_Games } from "./components/";
 import { Backdrops as options } from "./utils";
@@ -18,7 +18,7 @@ export class Landing extends React.Component {
     }
 
     if (this.props.popular.length === 0) {
-      this.props.getPopular();
+      this.props.getPopularGames();
     }
   }
 
@@ -75,4 +75,4 @@ const mapStateToProps = state => ({
   popular: state.landing.popular
 });
 
-export default connect(mapStateToProps, { getPopular, getBackdrop })(Landing);
+export default connect(mapStateToProps, { getPopularGames, getBackdrop })(Landing);

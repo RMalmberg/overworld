@@ -1,14 +1,14 @@
 import axios from "axios";
-import { GET_POPULAR, GET_BACKDROP } from "./actionTypes";
+import { GET_POPULAR_GAMES, GET_BACKDROP } from "./actionTypes";
 
-export const getPopular = (limit = 6, offset = 0, filters = {}) => dispatch => {
+export const getPopularGames = (limit = 6, offset = 0, filters = {}) => dispatch => {
   axios
     .get("/api/games/popular/", {
       params: { limit: limit, offset: offset, filters: filters }
     })
     .then(res => {
       dispatch({
-        type: GET_POPULAR,
+        type: GET_POPULAR_GAMES,
         payload: res.data
       });
     })
