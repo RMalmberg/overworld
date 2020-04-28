@@ -12,7 +12,7 @@ export default function(state = initialState, action) {
     case GET_POPULAR_GAMES:
       return {
         ...state,
-        popular: action.payload,
+        popularGames: action.payload,
         isLoadingPopular: false
       };
     case GET_BACKDROP:

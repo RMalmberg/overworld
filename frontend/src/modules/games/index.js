@@ -10,7 +10,7 @@ import { Popular_Games } from "./components/";
 import { Backdrops as options } from "./utils";
 import "./styles.css";
 
-export class Landing extends React.Component {
+export class Games extends React.Component {
   componentDidMount() {
     const game = options[Math.floor(Math.random() * options.length)];
     if (Object.keys(this.props.backdrop).length === 0) {
@@ -39,15 +39,6 @@ export class Landing extends React.Component {
             <Features />
             {Object.keys(backdrop).length > 0 && (
               <section className="backdrop-name">
-                Backdrop from{" "}
-                <Link
-                  to={{
-                    pathname: `/games/${backdrop.slug}`,
-                    state: backdrop.gameId
-                  }}
-                >
-                  {backdrop.name}
-                </Link>
               </section>
             )}
           </div>
@@ -58,7 +49,7 @@ export class Landing extends React.Component {
   }
 }
 
-Landing.propTypes = {
+Games.propTypes = {
   isLoadingPopular: PropTypes.bool.isRequired,
   getBackdrop: PropTypes.func.isRequired,
   getPopular: PropTypes.func.isRequired,
@@ -72,4 +63,4 @@ const mapStateToProps = state => ({
   popular: state.landing.popular
 });
 
-export default connect(mapStateToProps, { getPopularGames, getBackdrop })(Landing);
+export default connect(mapStateToProps, { getPopularGames, getBackdrop })(Games);
