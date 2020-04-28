@@ -4,9 +4,10 @@ import { Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Backdrop, Footer, Register, LogIn } from "../app/components/";
-import { getPopular, getBackdrop } from "../landing/actions";
-import { Features, Popular } from "../landing/components/";
-import { Backdrops as options } from "../landing/utils";
+import { getPopular, getBackdrop } from "./actions";
+import { Features } from "./components/";
+import { Popular_Games } from "./components/";
+import { Backdrops as options } from "./utils";
 import "../landing/styles.css";
 
 export class Landing extends React.Component {
@@ -37,7 +38,7 @@ export class Landing extends React.Component {
             <section className="landing-header">
               <h1>Games</h1>
             </section>
-            <Popular isLoading={isLoadingPopular} popular={popular} />
+            <Popular_Games isLoading={isLoadingPopular} popular={popular} />
             <Features />
             {Object.keys(backdrop).length > 0 && (
               <section className="backdrop-name">
