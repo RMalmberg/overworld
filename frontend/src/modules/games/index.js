@@ -8,7 +8,7 @@ import { getPopularGames, getBackdrop } from "./actions";
 import { Features } from "./components/";
 import { Popular_Games } from "./components/";
 import { Backdrops as options } from "./utils";
-import "../landing/styles.css";
+import "./styles.css";
 
 export class Landing extends React.Component {
   componentDidMount() {
