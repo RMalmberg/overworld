@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-const Popular_Games = ({ isLoading, popular }) => (
+const Popular_Games = ({ isLoading, popularGames }) => (
   <section className="popular margin-top-xs margin-bottom">
     {!isLoading ? (
       <React.Fragment>
-        {popular.map((p, i) => {
+        {popularGames.map((p, i) => {
           return (
             <Link to={`/games/${p.slug}`} key={p.id} className="cover-wrapper">
               <img
@@ -34,7 +34,7 @@ const Popular_Games = ({ isLoading, popular }) => (
 
 Popular_Games.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  popular: PropTypes.array.isRequired
+  popularGames: PropTypes.array.isRequired
 };
 
 export default Popular_Games;

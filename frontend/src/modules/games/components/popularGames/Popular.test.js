@@ -2,7 +2,7 @@ import React from "react";
 import Enzyme, { shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { Link } from "react-router-dom";
-import Popular_Games from "../popular";
+import Popular_Games from "./";
 
 describe("Test <Popular_Games />", () => {
   it("shows required props warning when no props passed", () => {

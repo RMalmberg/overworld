@@ -1,26 +1,19 @@
-import { GET_POPULAR_GAMES, GET_BACKDROP } from "./actionTypes";
+import { GET_POPULAR_GAMES } from "./actionTypes";
 
 const initialState = {
-  backdrop: {},
   popularGames: [],
   gameData: [],
   isLoadingPopular: true
 };
 
 export default function(state = initialState, action) {
-  switch (action.type) {
-    case GET_POPULAR_GAMES:
-      return {
-        ...state,
-        popularGames: action.payload,
-        isLoadingPopular: false
-      };
-    case GET_BACKDROP:
-      return {
-        ...state,
-        backdrop: action.payload
-      };
-    default:
-      return state;
+  if (action.type === GET_POPULAR_GAMES) {
+    return {
+      ...state,
+      popularGames: action.payload,
+      isLoadingPopular: false
+    };
+  } else {
+    return state;
   }
 }

@@ -28,7 +28,7 @@ export class Games extends React.Component {
   }
 
   render() {
-    const { isLoadingPopular, popular, backdrop } = this.props;
+    const { isLoadingPopular, popular } = this.props;
     return (
       <React.Fragment>
         <Container className="padding-bottom">
@@ -43,9 +43,10 @@ export class Games extends React.Component {
               <GameSearch />
               </p>
             </section>
-            <Popular_Games isLoading={isLoadingPopular} popular={popular} />
+            <Popular_Games isLoading={isLoadingPopular} popularGames={popular} />
           </div>
         </Container>
+        <Footer />
       </React.Fragment>
     );
   }
@@ -53,9 +54,7 @@ export class Games extends React.Component {
 
 Games.propTypes = {
   isLoadingPopular: PropTypes.bool.isRequired,
-  getBackdrop: PropTypes.func.isRequired,
   getPopular: PropTypes.func.isRequired,
-  backdrop: PropTypes.object.isRequired,
   popularGames: PropTypes.array.isRequired
 };
 
