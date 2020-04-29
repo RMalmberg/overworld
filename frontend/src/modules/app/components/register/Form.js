@@ -43,7 +43,7 @@ export const RegistrationForm = ({
       positive
       fluid
       type="submit"
-      disabled={!validateForm()}
+      //disabled={!validateForm()}
     >
       Sign Up
     </Button>

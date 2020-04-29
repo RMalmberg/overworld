@@ -7,7 +7,8 @@ import { Backdrops as options } from "../../../landing/utils";
 import "./styles.css";
 import { Container, Form, Button } from "semantic-ui-react";
 import { RegistrationForm } from "./Form";
-import { LoginForm } from "../login/Form";
+import PropTypes from "prop-types";
+// import { Button, Form } from "semantic-ui-react";
 
 const SignUpPage = () => {
 
@@ -33,6 +34,7 @@ return (
     <>
     <h1> Join Overworld! </h1>
     <Container>
+    <RegistrationForm/>
     </Container>
       {Object.keys(backdrop).length > 0 && (
         <Backdrop imageId={backdrop.imageId} />
