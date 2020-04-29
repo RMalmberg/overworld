@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Container } from "semantic-ui-react";
+import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Backdrop, Footer, Register, LogIn } from "../app/components/";
+import { Backdrop, Footer, Register, LogIn, GameSearch } from "../app/components/";
 import { getPopularGames, getBackdrop } from "./actions";
 import { Features } from "./components/";
 import { Popular_Games } from "./components/";
 import { Backdrops as options } from "./utils";
 import "./styles.css";
+
+
+
+
 
 export class Games extends React.Component {
   componentDidMount() {
@@ -34,6 +39,9 @@ export class Games extends React.Component {
           <div className="games">
             <section className="games-header">
               <h1>Games</h1>
+              <p>
+              <GameSearch />
+              </p>
             </section>
             <Popular_Games isLoading={isLoadingPopular} popular={popular} />
           </div>
@@ -56,5 +64,7 @@ const mapStateToProps = state => ({
   isLoadingPopular: state.landing.isLoadingPopular,
   popular: state.landing.popular
 });
+
+
 
 export default connect(mapStateToProps, { getPopularGames, getBackdrop })(Games);

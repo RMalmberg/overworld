@@ -1,8 +1,8 @@
-.popular {
+.popularGames {
   text-align: center;
 }
 
-.popular .cover-wrapper {
+.popularGames .cover-wrapper {
   margin: 1rem 0.5rem 0 0.5rem;
   width: 135px;
   height: 192px;
@@ -13,22 +13,22 @@
   cursor: pointer;
 }
 
-.popular .cover-wrapper:last-child,
-.popular .placeholder:last-child {
+.popularGames .cover-wrapper:last-child,
+.popularGames .placeholder:last-child {
   margin: 1rem 0 0 0.5rem;
 }
 
-.popular .cover-wrapper:hover .cover-overlay {
+.popularGames .cover-wrapper:hover .cover-overlay {
   opacity: 1;
 }
 
-.popular .cover {
+.popularGames .cover {
   width: 100%;
   height: 100%;
   border-radius: 0.3125rem;
 }
 
-.popular .cover-overlay {
+.popularGames .cover-overlay {
   position: absolute;
   opacity: 0;
   flex-shrink: 0;
@@ -51,7 +51,7 @@
   vertical-align: middle;
 }
 
-.popular .placeholder {
+.popularGames .placeholder {
   display: inline-block;
   width: 135px;
   height: 192px;
@@ -62,8 +62,8 @@
 }
 
 @media only screen and (max-width: 767px) and (min-width: 320px) {
-  .popular .cover-wrapper,
-  .popular .placeholder {
+  .popularGames .cover-wrapper,
+  .popularGames .placeholder {
     width: 90px;
     height: 128px;
   }

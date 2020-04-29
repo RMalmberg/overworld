@@ -24,7 +24,7 @@ const Popular_Games = ({ isLoading, popular }) => (
       </React.Fragment>
     ) : (
       <React.Fragment>
-        {[...Array(6)].map((_, i) => (
+        {[...Array(21)].map((_, i) => (
           <div key={i} className="placeholder" />
         ))}
       </React.Fragment>
