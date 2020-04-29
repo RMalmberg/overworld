@@ -38,7 +38,7 @@ export class Games extends React.Component {
               </p>
           <div className="games">
             <section className="games-header">
-              <h1>Games</h1>
+              <h1>Popular Games</h1>
               <p>
               <GameSearch />
               </p>
