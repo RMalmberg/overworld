@@ -33,7 +33,7 @@ return (
     <>
     <h1> Join Overworld! </h1>
     <Container>
-  </Container>
+    </Container>
       {Object.keys(backdrop).length > 0 && (
         <Backdrop imageId={backdrop.imageId} />
       )}

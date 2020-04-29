@@ -53,6 +53,12 @@ const Navbar = ({ history }) => {
           color={"pink"}
           onClick={handleItemClick}
         />
+         <Menu.Item
+          name="Sign up"
+          active={activeItem === "sign up"}
+          color={"pink"}
+          onClick={handleItemClick}
+        />
         {isAuthenticated ? (
           <Dropdown text={`${user.username}`} pointing className="link item">
             <Dropdown.Menu>
