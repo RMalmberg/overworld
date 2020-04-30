@@ -4,24 +4,14 @@ import { Container } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Backdrop, Footer, Register, LogIn, GameSearch } from "../app/components/";
-import { getPopularGames, getBackdrop } from "./actions";
-import { Features } from "./components/";
+import { Footer, Register, LogIn, GameSearch } from "../app/components/";
+import { getPopularGames } from "./actions";
 import { Popular_Games } from "./components/";
-import { Backdrops as options } from "./utils";
 import "./styles.css";
-
-
-
 
 
 export class Games extends React.Component {
   componentDidMount() {
-    const game = options[Math.floor(Math.random() * options.length)];
-    if (Object.keys(this.props.backdrop).length === 0) {
-      this.props.getBackdrop(game.gameId);
-    }
-
     if (this.props.popular.length === 0) {
       this.props.getPopularGames();
     }
@@ -66,4 +56,4 @@ const mapStateToProps = state => ({
 
 
 
-export default connect(mapStateToProps, { getPopularGames, getBackdrop })(Games);
+export default connect(mapStateToProps, { getPopularGames })(Games);

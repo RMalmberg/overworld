@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import Game from "./modules/game/";
-import Games from "./modules/games";
+import Games from "./modules/games/";
 import { Navbar } from "./modules/app/components/";
 import App from "./modules/app/";
 import Profile from "./modules/profile/";

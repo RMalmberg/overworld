@@ -28,7 +28,7 @@ describe("Test <Popular_Games /> when isLoading is true and popular is empty", (
   let wrap;
   const props = {
     isLoading: true,
-    popular: []
+    popularGames: []
   };
 
   beforeAll(() => {
@@ -55,7 +55,7 @@ describe("Test <Popular_Games /> when isLoading is true and popular is valid", (
   let wrap;
   const props = {
     isLoading: true,
-    popular: [
+    popularGames: [
       {
         id: 26950,
         cover: {
@@ -108,7 +108,7 @@ describe("Test <Popular_Games /> when isLoading is false and popular is valid", 
   let wrap;
   const props = {
     isLoading: false,
-    popular: [
+    popularGames: [
       {
         id: 26950,
         cover: {
@@ -189,9 +189,9 @@ describe("Test <Popular_Games /> when isLoading is false and popular is valid", 
 
     // Test each game given in popular prop
     links.forEach((node, i) => {
-      const slug = props.popular[i].slug;
-      const image_id = props.popular[i].cover.image_id;
-      const name = props.popular[i].name;
+      const slug = props.popularGames[i].slug;
+      const image_id = props.popularGames[i].cover.image_id;
+      const name = props.popularGames[i].name;
 
       // Test the anchor and href
       expect(node.hasClass("cover-wrapper")).toEqual(true);
@@ -201,7 +201,7 @@ describe("Test <Popular_Games /> when isLoading is false and popular is valid", 
       const img = node.children().get(0);
       expect(img.type).toEqual("img");
       expect(img.props.className).toEqual("cover");
-      expect(img.props.alt).toEqual(props.popular[i].name);
+      expect(img.props.alt).toEqual(props.popularGames[i].name);
       expect(img.props.src).toEqual(
         `https://images.igdb.com/igdb/image/upload/t_cover_big/${image_id}.jpg`
       );
@@ -218,11 +218,11 @@ describe("Test <Popular_Games /> when isLoading is false and popular is valid", 
   });
 });
 
-describe("Test <Popular /> when isLoading is false and popular is empty", () => {
+describe("Test <Popular_Games /> when isLoading is false and popular is empty", () => {
   let wrap;
   const props = {
     isLoading: false,
-    popular: []
+    popularGames: []
   };
 
   beforeAll(() => {

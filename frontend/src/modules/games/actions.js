@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_POPULAR_GAMES, GET_BACKDROP } from "./actionTypes";
+import { GET_POPULAR_GAMES } from "./actionTypes";
 
 export const getPopularGames = (limit = 6, offset = 0, filters = {}) => dispatch => {
   axios
@@ -15,18 +15,4 @@ export const getPopularGames = (limit = 6, offset = 0, filters = {}) => dispatch
     .catch(err => console.log(err));
 };
 
-export const getBackdrop = gameId => dispatch => {
-  axios.get(`/api/games/backdrop/${gameId}/`).then(res => {
-    const data = res.data[0];
-    const backdrop = {
-      name: data.name,
-      gameId: data.id,
-      imageId: data.screenshots[1].image_id,
-      slug: data.slug
-    };
-    dispatch({
-      type: GET_BACKDROP,
-      payload: backdrop
-    });
-  });
-};
+
