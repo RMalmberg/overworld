@@ -49,7 +49,6 @@ Games.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  backdrop: state.landing.backdrop,
   isLoadingPopular: state.landing.isLoadingPopular,
   popular: state.landing.popular
 });
