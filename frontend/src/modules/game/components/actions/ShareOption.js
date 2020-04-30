@@ -12,7 +12,11 @@ class ShareOption extends React.Component {
                 <Grid className="share-buttons">
                     <Grid.Row columns={3} verticalAlign="middle">
                         <Grid.Column>
-                            <FacebookShareButton url={window.location.href}>
+                            <FacebookShareButton url={window.location.href}
+                            title={`Check out ${this.props.game.name} (${moment(
+                                  this.props.game.first_release_date * 1000
+                                ).format("YYYY")}) on @JoinOverworld!:`}
+                            >
                                 <Popup
                                   trigger={<Icon link size="big" name="facebook f" />}
                                   content={"Facebook"}
@@ -39,7 +43,11 @@ class ShareOption extends React.Component {
                               </TwitterShareButton>
                         </Grid.Column>
                         <Grid.Column>
-                            <RedditShareButton url={window.location.href}>
+                            <RedditShareButton url={window.location.href}
+                                title={`Check out ${this.props.game.name} (${moment(
+                                  this.props.game.first_release_date * 1000
+                                ).format("YYYY")}) on @JoinOverworld!:`}
+                                >
                                 <Popup
                                   trigger={<Icon link size="big" name="reddit alien" />}
                                   content={"Reddit"}
