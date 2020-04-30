@@ -13,10 +13,10 @@ class ShareOption extends React.Component {
                     <Grid.Row columns={3} verticalAlign="middle">
                         <Grid.Column>
                             <FacebookShareButton url={window.location.href}
-                            title={`Check out ${this.props.game.name} (${moment(
-                                  this.props.game.first_release_date * 1000
-                                ).format("YYYY")}) on @JoinOverworld!:`}
-                            >
+                                title={`Check out ${this.props.game.name} (${moment(
+                                      this.props.game.first_release_date * 1000
+                                    ).format("YYYY")}) on @JoinOverworld!:`}
+                                >
                                 <Popup
                                   trigger={<Icon link size="big" name="facebook f" />}
                                   content={"Facebook"}
