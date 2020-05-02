@@ -85,10 +85,11 @@ export const LoginForm = () => {
           <label>Password</label>
           <input name="password" value={password} onChange={handleChange} />
         </Form.Field>
-        <Button type="submit">
+        <Button type="submit" disabled={!validateForm()}>
           Login
         </Button>
       </Form>
+
     </>
   );
 };
