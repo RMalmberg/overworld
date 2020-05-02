@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Form } from "semantic-ui-react";
 
-/*
+/* Original form
 export const LoginForm = ({
   handleChange,
   handleSubmit,
@@ -76,7 +76,19 @@ export const LoginForm = () => {
 
   return (
     <>
-
+      <Form onSubmit={handleSubmit}>
+        <Form.Field>
+          <label>Login ID</label>
+          <input name="username" value={username} onChange={handleChange} />
+        </Form.Field>
+        <Form.Field>
+          <label>Password</label>
+          <input name="password" value={password} onChange={handleChange} />
+        </Form.Field>
+        <Button type="submit">
+          Login
+        </Button>
+      </Form>
     </>
   );
 };
