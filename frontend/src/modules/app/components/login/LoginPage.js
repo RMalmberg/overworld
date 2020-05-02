@@ -7,7 +7,10 @@ import "./styles.css";
 const LoginPage = () => {
   const options = { position: ["isLeft"] };
   return (
-      <h1 style={{ textAlign: "center" }}>Welcome To The Login Page</h1>
+    <>
+      <h1 style={{textAlign: "center" }}>Sign In</h1>
+      <LoginForm />
+    </>
   );
 };
 

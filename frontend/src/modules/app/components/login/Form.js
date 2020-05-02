@@ -1,7 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { login } from "../../actions";
+import Error from "../errors/";
+import { Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { Button, Form } from "semantic-ui-react";
 
+/*
 export const LoginForm = ({
   handleChange,
   handleSubmit,
@@ -39,4 +43,40 @@ LoginForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   validateForm: PropTypes.func.isRequired
+};
+*/
+
+export const LoginForm = () => {
+  const defaultState = {
+    username: "",
+    password: ""
+  };
+  const [{ username, password }, setState] = useState(defaultState);
+  const { errors, isAuthenticated, user } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(login(username, password));
+  };
+
+  const validateForm = () => username.length > 0 && password.length > 0;
+
+  if (isAuthenticated) {
+    return <Redirect to={`/user/${user.username}`} />;
+  }
+
+  return (
+    <>
+
+    </>
+  );
 };
