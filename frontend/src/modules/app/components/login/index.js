@@ -58,7 +58,7 @@ const LogIn = ({ loginText }) => {
     >
       <Modal.Content>
         <Modal.Description>
-          <Header>Welcome back</Header>
+          <Header>Sign In</Header>
         </Modal.Description>
         <LoginForm
           validateForm={validateForm}
