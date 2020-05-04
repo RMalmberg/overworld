@@ -32,13 +32,13 @@ dispatch(getBackdrop(game.gameId));
 */
 return (
     <>
+    {Object.keys(backdrop).length > 0 && (
+    <Backdrop imageId={backdrop.imageId} />
+    )}
     <h1> Join Overworld! </h1>
     <Container>
     <RegistrationForm/>
     </Container>
-      {Object.keys(backdrop).length > 0 && (
-        <Backdrop imageId={backdrop.imageId} />
-      )}
       {Object.keys(backdrop).length > 0 && (
         <section className="backdrop-name">
           Backdrop from{" "}
