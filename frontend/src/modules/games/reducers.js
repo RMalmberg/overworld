@@ -2,8 +2,7 @@ import { GET_POPULAR_GAMES } from "./actionTypes";
 
 const initialState = {
   popularGames: [],
-  gameData: [],
-  isLoadingPopular: true
+  isLoadingPopularGames: true
 };
 
 export default function(state = initialState, action) {
@@ -11,7 +10,7 @@ export default function(state = initialState, action) {
     return {
       ...state,
       popularGames: action.payload,
-      isLoadingPopular: false
+      isLoadingPopularGames: false
     };
   } else {
     return state;
