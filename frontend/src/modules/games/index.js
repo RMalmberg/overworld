@@ -4,10 +4,11 @@ import { Container } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Footer, Register, LogIn, GameSearch } from "../app/components/";
+import { Footer, Register, LogIn, GameSearch} from "../app/components/";
 import { getPopularGames } from "./actions";
 import { Popular_Games } from "./components/";
 import "./styles.css";
+
 
 
 export class Games extends React.Component {
@@ -17,8 +18,11 @@ export class Games extends React.Component {
     }
   }
 
+
+
   render() {
     const { isLoadingPopular, popular } = this.props;
+
     return (
       <React.Fragment>
         <Container className="padding-bottom">
@@ -29,11 +33,9 @@ export class Games extends React.Component {
           <div className="games">
             <section className="games-header">
               <h1>Popular Games</h1>
-              <p>
               <GameSearch />
-              </p>
             </section>
-            <Popular_Games isLoading={isLoadingPopular} popularGames={popular} />
+            <Popular_Games isLoadingPopular={isLoadingPopular} popularGames={popular} />
           </div>
         </Container>
         <Footer />
@@ -47,6 +49,7 @@ Games.propTypes = {
   getPopular: PropTypes.func.isRequired,
   popularGames: PropTypes.array.isRequired
 };
+
 
 const mapStateToProps = state => ({
   isLoadingPopular: state.landing.isLoadingPopular,

@@ -33,7 +33,7 @@ const Popular_Games = ({ isLoading, popularGames }) => (
 );
 
 Popular_Games.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
+  isLoadingPopular: PropTypes.bool.isRequired,
   popularGames: PropTypes.array.isRequired
 };
 

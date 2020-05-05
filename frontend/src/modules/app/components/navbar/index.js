@@ -17,8 +17,9 @@ const Navbar = ({ history }) => {
     history.push(`/${name}`);
   };
 
-  const handleResultSelect = result =>
-    history.push(`/games/${result.slug}`, result.slug);
+  const handleResultSelect = result => {
+      history.push(`/games/${result.slug}`, result.slug);
+  };
 
   return (
     <Menu className="navbar" inverted secondary>
