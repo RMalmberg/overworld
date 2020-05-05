@@ -26,14 +26,14 @@ export class Games extends React.Component {
     return (
       <React.Fragment>
         <Container className="padding-bottom">
-          <p>
-                <Register />
-                Or <LogIn loginText="sign in" /> .
-              </p>
+          <div>
+            <p>
+              <Register /> Or <LogIn loginText="sign in" /> .
+            </p>
+          </div>
           <div className="games">
             <section className="games-header">
               <h1>Popular Games</h1>
-              <GameSearch />
             </section>
             <Popular_Games isLoadingPopular={isLoadingPopular} popularGames={popular} />
           </div>
