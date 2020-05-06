@@ -20,6 +20,15 @@ const Details = ({ game }) => {
       ]
     : [];
 
+/* Age Rating Enums
+Category -> strings
+Rating -> string./int
+*/
+const enums= {
+'ESRB': "01", 'PEGI': "02", 'Three':1, 'Seven':2, 'Twelve':3, 'Sixteen':4,
+'Eighteen':5, 'RP':6, 'EC':7, 'E':8, 'E10':9, 'T':10, 'M':11, 'AO':12
+}
+
   return (
     <Tab
       className="tabs margin-top"

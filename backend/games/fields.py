@@ -17,7 +17,8 @@ _game_fields = [
     'age_ratings.category',
     'age_ratings.rating',
     'age_ratings.rating_cover_url',
-    'age_ratings.synposis',
+    # 'age_ratings.synposis',
+    # makes the site crash
 ]
 
 _recent_game_fields = [
