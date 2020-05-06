@@ -124,6 +124,9 @@ const enums= {
                       </h3>
                     </Grid.Column>
                     <Grid.Column width={8} className="details">
+                    {game.age_ratings !== undefined && game.age_ratings.map(d => {
+                    return <Label key={d.category}>{enums[0+" "+d.category]+" "+enums[d.rating]}</Label>
+                    })}
                     </Grid.Column>
                   </Grid.Row>
               </Grid>
