@@ -22,10 +22,10 @@ const Details = ({ game }) => {
 
 /* Age Rating Enums
 Category -> strings
-Rating -> string/int
+Rating -> int/string (i had it backwards)
 */
 const enums= {
-'01': "ESRB", '02': "PEGI", 1:'Three', 2:'Seven', 3:'Twelve', 4:'Sixteen',
+'01': 'ESRB', '02': 'PEGI', 1:'Three', 2:'Seven', 3:'Twelve', 4:'Sixteen',
 5:'Eighteen', 6:'RP', 7:'EC', 8:'E', 9:'E10', 10:'T', 11:'M', 12:'AO'
 }
 
@@ -125,7 +125,7 @@ const enums= {
                     </Grid.Column>
                     <Grid.Column width={8} className="details">
                     {game.age_ratings !== undefined && game.age_ratings.map(d => {
-                    return <Label key={d.category}>{enums[0+" "+d.category]+" "+enums[d.rating]}</Label>
+                    return <Label key={d.category}>{enums[0+""+d.category]+" "+enums[d.rating]}</Label>
                     })}
                     </Grid.Column>
                   </Grid.Row>
