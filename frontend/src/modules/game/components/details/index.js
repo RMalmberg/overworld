@@ -22,11 +22,11 @@ const Details = ({ game }) => {
 
 /* Age Rating Enums
 Category -> strings
-Rating -> string./int
+Rating -> string/int
 */
 const enums= {
-'ESRB': "01", 'PEGI': "02", 'Three':1, 'Seven':2, 'Twelve':3, 'Sixteen':4,
-'Eighteen':5, 'RP':6, 'EC':7, 'E':8, 'E10':9, 'T':10, 'M':11, 'AO':12
+'01': "ESRB", '02': "PEGI", 1:'Three', 2:'Seven', 3:'Twelve', 4:'Sixteen',
+5:'Eighteen', 6:'RP', 7:'EC', 8:'E', 9:'E10', 10:'T', 11:'M', 12:'AO'
 }
 
   return (
