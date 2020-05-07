@@ -22,7 +22,7 @@ export class Landing extends React.Component {
   }
 
   render() {
-    const { isLoadingPopular, popular, backdrop } = this.props;
+    const { isLoading, popular, backdrop } = this.props;
     return (
       <React.Fragment>
         <Container className="padding-bottom">
@@ -38,7 +38,7 @@ export class Landing extends React.Component {
                 Or <LogIn loginText="sign in" /> if you're already a member.
               </p>
             </section>
-            <Popular isLoading={isLoadingPopular} popular={popular} />
+            <Popular isLoading={isLoading} popular={popular} />
             <Features />
             {Object.keys(backdrop).length > 0 && (
               <section className="backdrop-name">
@@ -71,7 +71,7 @@ Landing.propTypes = {
 
 const mapStateToProps = state => ({
   backdrop: state.landing.backdrop,
-  isLoadingPopular: state.landing.isLoadingPopular,
+  isLoading: state.landing.isLoading,
   popular: state.landing.popular
 });
 

@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Container } from "semantic-ui-react";
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Footer, Register, LogIn, GameSearch} from "../app/components/";
+import { Footer, Register, LogIn } from "../app/components/";
 import { getPopularGames } from "./actions";
 import { Popular_Games } from "./components/";
 import "./styles.css";
@@ -17,6 +15,7 @@ export class Games extends React.Component {
       this.props.getPopularGames();
     }
   }
+
 
 
 
@@ -52,7 +51,7 @@ Games.propTypes = {
 
 
 const mapStateToProps = state => ({
-  isLoadingPopular: state.landing.isLoadingPopular,
+  isLoadingPopular: state.games.isLoadingPopular,
   popular: state.landing.popular
 });
 
