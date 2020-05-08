@@ -15,6 +15,7 @@ const Navbar = ({ history }) => {
   const handleItemClick = (_e, { name }) => {
     setActiveItem(name);
     history.push(`/${name}`);
+    window.location.reload(false);
   };
 
   const handleResultSelect = result => {
