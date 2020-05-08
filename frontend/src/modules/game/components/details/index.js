@@ -142,7 +142,31 @@ const Details = ({ game }) => {
         {
           menuItem: "genres",
           render: () => (
-            <Tab.Pane attached={false}>
+            <Tab.Pane className={"genres"} attached={false}>
+              {game.genres &&
+                game.genres.map(g => {
+                  return <Label key={g.id}>{g.name}</Label>;
+                })}
+              {game.themes &&
+                game.themes.map(t => {
+                  return <Label key={t.id}>{t.name}</Label>;
+                })}
+               {/* <Grid>
+                    <Grid.Row>
+                      <Grid.Column width={4}>
+                        <h3>
+                            <span>Similar Games</span>
+                        </h3>
+                      </Grid.Column>
+                    </Grid.Row>
+                </Grid>*/}
+            </Tab.Pane>
+          )
+        },
+        {
+          menuItem: "similar games",
+          render: () => (
+            <Tab.Pane className={"similar games"} attached={false}>
               {game.genres &&
                 game.genres.map(g => {
                   return <Label key={g.id}>{g.name}</Label>;
