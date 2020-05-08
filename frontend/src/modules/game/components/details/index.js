@@ -7,6 +7,8 @@ import "./styles.css";
 
 countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
 
+
+
 const Details = ({ game }) => {
   const gameCountries = game.involved_companies
     ? [
@@ -151,15 +153,6 @@ const Details = ({ game }) => {
                 game.themes.map(t => {
                   return <Label key={t.id}>{t.name}</Label>;
                 })}
-               {/* <Grid>
-                    <Grid.Row>
-                      <Grid.Column width={4}>
-                        <h3>
-                            <span>Similar Games</span>
-                        </h3>
-                      </Grid.Column>
-                    </Grid.Row>
-                </Grid>*/}
             </Tab.Pane>
           )
         },
@@ -175,6 +168,20 @@ const Details = ({ game }) => {
                 game.themes.map(t => {
                   return <Label key={t.id}>{t.name}</Label>;
                 })}
+                <script>
+                    function getSimilarGames() {
+                    alert("Hello World!")
+                    };
+                </script>
+                {/* <Grid>
+                    <Grid.Row>
+                      <Grid.Column width={4}>
+                        <h3>
+                            <span>Similar Games</span>
+                        </h3>
+                      </Grid.Column>
+                    </Grid.Row>
+                </Grid>*/}
             </Tab.Pane>
           )
         }
