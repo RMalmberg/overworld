@@ -13,6 +13,12 @@ _game_fields = [
     'summary',
     'time_to_beat.normally',
     'themes.name',
+    'age_ratings',
+    'age_ratings.category',
+    'age_ratings.rating',
+    'age_ratings.rating_cover_url',
+    # 'age_ratings.synposis',
+    # makes the site crash
     'dlcs',
     'dlcs.cover.image_id',
     'dlcs.slug',

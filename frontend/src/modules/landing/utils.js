@@ -14,5 +14,10 @@ export const Backdrops = [
   { name: "The Banner Saga", gameId: "5508" },
   { name: "RAGE 2", gameId: "101211" },
   { name: "Marvel's Spider-Man", gameId: "19565" },
-  { name: "Mario + Rabbids Kingdom Battle", gameId: "28414" }
+  { name: "Mario + Rabbids Kingdom Battle", gameId: "28414" },
+  { name: "Dragon Age: Inquisition", gameId: "1887" },
+  { name: "Dragon Age: Origins", gameId: "76"},
+  { name: "Dragon Age II", gameId: "78"},
+  { name: "Fire Emblem Fates: Special Edition", gameId: "10229"}
+
 ];

@@ -20,6 +20,15 @@ const Details = ({ game }) => {
       ]
     : [];
 
+/* Age Rating Enums
+Category -> strings
+Rating -> int/string (i had it backwards)
+*/
+const enums= {
+'01': 'ESRB', '02': 'PEGI', 1:'Three', 2:'Seven', 3:'Twelve', 4:'Sixteen',
+5:'Eighteen', 6:'RP', 7:'EC', 8:'E', 9:'E10', 10:'T', 11:'M', 12:'AO'
+}
+
   return (
     <Tab
       className="tabs margin-top"
@@ -108,6 +117,18 @@ const Details = ({ game }) => {
                     </Grid.Column>
                   </Grid.Row>
                 )}
+                  <Grid.Row>
+                    <Grid.Column width={8}>
+                      <h3>
+                        <span>Age Ratings</span>
+                      </h3>
+                    </Grid.Column>
+                    <Grid.Column width={8} className="details">
+                    {game.age_ratings !== undefined && game.age_ratings.map(d => {
+                    return <Label key={d.category}>{enums[0+""+d.category]+" "+enums[d.rating]}</Label>
+                    })}
+                    </Grid.Column>
+                  </Grid.Row>
               </Grid>
             </Tab.Pane>
           )
