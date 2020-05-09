@@ -7,3 +7,5 @@ export { default as TileCoverLoader } from "./loaders/TileCoverLoader";
 export { default as TextLoader } from "./loaders/TextLoader";
 export { default as QuickStats } from "./quick-stats";
 export { default as Screenshots } from "./screenshots";
+export { default as DLC } from "./dlc";
+export { default as Expansions } from "./expansions";

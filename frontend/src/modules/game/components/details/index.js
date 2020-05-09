@@ -137,25 +137,6 @@ const Details = ({ game }) => {
                 })}
             </Tab.Pane>
           )
-        },
-        {
-          menuItem: "dlc",
-          render: () => (
-            <Tab.Pane attached={false}>
-              {game.dlcs &&
-                game.dlcs.map(g => {
-                  return <Label key={g.id}>{g.name}</Label>;
-                })}
-              {game.expansion &&
-                game.expansion.map(t => {
-                  return <Label key={t.id}>{t.name}</Label>;
-                })}
-              {game.standalone_expansions &&
-                game.standalone_expansions.map(g => {
-                  return <Label key={g.id}>{g.name}</Label>;
-                })}
-            </Tab.Pane>
-          )
         }
       ]}
     />

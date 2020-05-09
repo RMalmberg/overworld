@@ -13,6 +13,18 @@ _game_fields = [
     'summary',
     'time_to_beat.normally',
     'themes.name',
+    'dlcs',
+    'dlcs.cover.image_id',
+    'dlcs.slug',
+    'dlcs.name',
+    'expansions',
+    'expansions.cover.image_id',
+    'expansions.slug',
+    'expansions.name',
+    'standalone_expansions',
+    'standalone_expansions.cover.image_id',
+    'standalone_expansions.slug',
+    'standalone_expansions.name'
 ]
 
 _recent_game_fields = [

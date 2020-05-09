@@ -12,7 +12,9 @@ import {
   TitleLoader,
   TextLoader,
   ActionsLoader,
-  Screenshots
+  Screenshots,
+  DLC,
+  Expansions
 } from "./components/";
 import "./styles.css";
 import ShowMoreText from "react-show-more-text";
@@ -181,6 +183,22 @@ export default class Game extends React.Component {
               <Grid.Column width={4} />
               <Grid.Column width={9}>
                 {!isLoading && <Screenshots screenshots={game.screenshots} />}
+              </Grid.Column>
+              <Grid.Column width={3} />
+            </Grid.Row>
+            <Grid.Row>
+              {/* the following empty columns are used as offset */}
+              <Grid.Column width={4} />
+              <Grid.Column width={9}>
+                {!isLoading && <DLC dlcs={game.dlcs} isLoading={isLoading} />}
+              </Grid.Column>
+              <Grid.Column width={3} />
+            </Grid.Row>
+            <Grid.Row>
+              {/* the following empty columns are used as offset */}
+              <Grid.Column width={4} />
+              <Grid.Column width={9}>
+                {!isLoading && <Expansions expansions={game.expansions} isLoading={isLoading} />}
               </Grid.Column>
               <Grid.Column width={3} />
             </Grid.Row>
