@@ -13,6 +13,10 @@ _game_fields = [
     'summary',
     'time_to_beat.normally',
     'themes.name',
+    'similar_games',
+    'similar_games.cover.image_id',
+    'similar_games.slug',
+    'similar_games.name',
 ]
 
 _recent_game_fields = [
