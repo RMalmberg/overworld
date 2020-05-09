@@ -33,6 +33,7 @@ export default class Game extends React.Component {
     this.resetState(gameSlug);
     this.loadGame(gameSlug);
     this.loadGameRatings(gameSlug);
+    this.loadGameDLCs(gameSlug);
   }
 
   //call this function to update state of a new game
@@ -68,6 +69,15 @@ export default class Game extends React.Component {
     axios.get(`/api/games/${gameSlug}/ratings`).then(res => {
       this.setState({
         ratings: res.data
+      });
+    });
+  };
+
+  //load the DLC for the game.
+  loadGameDLCs = gameSlug => {
+    axios.get(`/api/games/${gameSlug}/dlcs`).then(res => {
+      this.setState({
+        dlcs: res.data
       });
     });
   };
