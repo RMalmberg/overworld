@@ -1,11 +1,51 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tab, Grid, Label } from "semantic-ui-react";
+import { Tab, Grid, Label, Image, Header } from "semantic-ui-react";
 import countries from "i18n-iso-countries";
 import Moment from "react-moment";
 import "./styles.css";
 
 countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
+
+export const Cover = (({id ,size, imageID, slug, key, name})=>{
+     const src=`https://images.igdb.com/igdb/image/upload/t_cover_${size}/${imageID}.jpg`
+
+    return(
+     <a key={id} className="cover-wrapper" href={`/games/${slug}`} target="_blank">
+         <Image src={src} rounded alt={slug} className="cover" size="big"/>
+         <div key={key} class="cover-overlay">
+             <strong>{name}</strong>
+         </div>
+     </a>
+    )
+});
+
+const Similar = ({similar_games,isLoading})=>{
+    return(<div className="similar">
+        <Header className="white">Similar Games</Header>
+        <section className="sec">
+        {similar_games && !isLoading ? (
+            <React.Fragment>
+                {similar_games.map((g,i)=>{
+                    try {
+                        return (<Cover size="big" imageID={g.cover.image_id} slug={g.slug} key={i} id={g} name={g.name}/>)
+
+                    } catch (error) {
+                        [...Array(6)].map((_, i) => (
+                            <div key={i} className="placeholder" />
+                        ))
+                    }
+                })}
+            </React.Fragment>
+        ):(
+            <React.Fragment>
+                {[...Array(6)].map((_, i) => (
+                    <div key={i} className="placeholder" />
+                ))}
+            </React.Fragment>
+        )}
+    </section></div>)
+};
 
 const Details = ({ game }) => {
   const gameCountries = game.involved_companies
@@ -147,7 +187,7 @@ const enums= {
         {
           menuItem: "genres",
           render: () => (
-            <Tab.Pane attached={false}>
+            <Tab.Pane className={"genres"} attached={false}>
               {game.genres &&
                 game.genres.map(g => {
                   return <Label key={g.id}>{g.name}</Label>;
@@ -155,6 +195,22 @@ const enums= {
               {game.themes &&
                 game.themes.map(t => {
                   return <Label key={t.id}>{t.name}</Label>;
+                })}
+            </Tab.Pane>
+          )
+        },
+        {
+          menuItem: "similar games",
+          render: () => (
+            <Tab.Pane className={"similar games"} attached={false}>
+              {/*{game.genres &&
+                game.genres.map(g => {
+                  return <Label key={g.id}>{g.name}</Label>;
+                })}*/}
+              {game.similar_games &&
+                game.similar_games.map(s => {
+                  return <Label key={s.id}>{s.name}</Label>;
+                 //  return <Label>game.similar_games</Label>
                 })}
             </Tab.Pane>
           )
