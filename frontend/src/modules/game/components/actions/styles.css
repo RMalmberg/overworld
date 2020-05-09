@@ -63,3 +63,13 @@ rect {
   color: #345;
   text-shadow: none;
 }
+
+.ui.input input {
+  background-color: #333333;
+  width: 120px;
+  height: 20px;
+}
+
+.ui.input text {
+  color: #456;
+}

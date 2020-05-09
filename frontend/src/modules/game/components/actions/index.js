@@ -6,6 +6,7 @@ import { LogIn } from "../../../app/components";
 import LogModal from "../log-modal";
 import Buttons from "./Buttons";
 import Ratings from "./Rating";
+import ShareOption from "./ShareOption";
 import "./styles.css";
 
 class Actions extends React.Component {
@@ -14,6 +15,24 @@ class Actions extends React.Component {
       this.setState({ [name]: value });
     }
   };
+
+  constructor(props) {
+    super(props);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.state = {
+      isHovering: false,
+    };
+  }
+
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
+  }
 
   render() {
     return (
@@ -33,7 +52,20 @@ class Actions extends React.Component {
         ) : (
           <LogIn loginText="Sign in to log, rate or review..." />
         )}
-        <Menu.Item content="Share..." link />
+        <Menu.Item>
+          {!this.state.isHovering &&
+          <div
+          onMouseEnter={this.handleMouseHover}>
+            Share this game on social media!
+          </div>
+          }
+          {this.state.isHovering &&
+          <div
+          onMouseLeave={this.handleMouseHover}>
+            <ShareOption game={this.props.game}/>
+          </div>
+        }
+        </Menu.Item>
       </Menu>
     );
   }
