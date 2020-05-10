@@ -13,6 +13,7 @@ import {
   TextLoader,
   ActionsLoader,
   Screenshots,
+  Video,
   DLC,
   Expansions
 } from "./components/";
@@ -117,6 +118,13 @@ export default class Game extends React.Component {
                   ) : (
                     <CoverLoader />
                   )}
+                  {/* Trailer */}
+                  <Grid.Row className="trailer-button">
+                    {/* the following empty columns are used as offset */}
+                    <Grid.Column width={4}>
+                        {!isLoading && <Video game={game} />}
+                    </Grid.Column>
+                  </Grid.Row>
                 </Grid.Column>
                 <Grid.Column width={12}>
                   {/* Game title */}
