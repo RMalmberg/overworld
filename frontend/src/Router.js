@@ -7,6 +7,7 @@ import Games from "./modules/games/";
 import { Navbar } from "./modules/app/components/";
 import { SignUpPage } from "./modules/app/components/";
 import App from "./modules/app/";
+import Login from "./modules/app/components/login/LoginPage";
 import Profile from "./modules/profile/";
 import Settings from "./modules/settings/";
 import { loadUser } from "./modules/app/actions";
@@ -28,6 +29,7 @@ class AppRouter extends React.Component {
           <Switch>
             <Route path="/" exact component={App} />
             <Route path="/Sign up" component={SignUpPage} />
+            <Route path="/login" component={Login} />
             <Route path="/games/:slug" component={Game} />
             <Route path="/games" component={Games} />
             <Route path="/user/:username" component={Profile} />

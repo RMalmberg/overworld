@@ -55,6 +55,12 @@ const Navbar = ({ history }) => {
           color={"pink"}
           onClick={handleItemClick}
         />
+        <Menu.Item
+          name="Login"
+          active={activeItem === "Login"}
+          color={"red"}
+          onClick={handleItemClick}
+        />
          <Menu.Item
           name="Sign up"
           active={activeItem === "sign up"}
@@ -100,7 +106,7 @@ const Navbar = ({ history }) => {
             </Dropdown.Menu>
           </Dropdown>
         ) : (
-          <LogIn loginText={"Sign In"} />
+          <p></p>
         )}
         <Menu.Item fitted={"vertically"}>
           <GameSearch onResultSelect={handleResultSelect} />

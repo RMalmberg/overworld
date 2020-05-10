@@ -7,7 +7,7 @@ import Error from "../errors/";
 import { LoginForm } from "./Form";
 import "./styles.css";
 
-const LogIn = ({ loginText }) => {
+const Login = ({ loginText }) => {
   const defaultState = {
     username: "",
     password: "",
@@ -58,7 +58,7 @@ const LogIn = ({ loginText }) => {
     >
       <Modal.Content>
         <Modal.Description>
-          <Header>Welcome back</Header>
+          <Header>Sign In</Header>
         </Modal.Description>
         <LoginForm
           validateForm={validateForm}
@@ -76,4 +76,4 @@ const LogIn = ({ loginText }) => {
   );
 };
 
-export default LogIn;
+export default Login;
